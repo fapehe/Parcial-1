@@ -10,56 +10,85 @@ package calculadorap1;
  * @author estudiantes
  */
 public class Calculadora {
-    float Numero1;
+    double Numero1;
+    double Numero2;
+    double Resultado;
 
-    public float getNumero1() {
+    public double getNumero1() {
         return Numero1;
     }
 
-    public void setNumero1(float Numero1) {
+    public void setNumero1(double Numero1) {
         this.Numero1 = Numero1;
     }
 
-    public float getNumero2() {
+    public double getNumero2() {
         return Numero2;
     }
 
-    public void setNumero2(float Numero2) {
+    public void setNumero2(double Numero2) {
         this.Numero2 = Numero2;
     }
 
-    public float getResultado() {
+    public double getResultado() {
         return Resultado;
     }
 
-    public void setResultado(float Resultado) {
+    public void setResultado(double Resultado) {
         this.Resultado = Resultado;
     }
-    float Numero2;
-    float Resultado;
     
-    public float suma()
+    
+    public double suma()
     {
     
     this.Resultado=this.Numero1+this.Numero2;
     return this.Resultado;
     }
-    public float resta()
+    public double resta()
     {
     
     this.Resultado=this.Numero1-this.Numero2;
     return this.Resultado;
     }
-    public float multiplicacion()
+    public double multiplicacion()
     {
     
     this.Resultado=this.Numero1*this.Numero2;
     return this.Resultado;
     }
-    public float division()
+    public double division()
     {
     
     this.Resultado=this.Numero1/this.Numero2;
     return this.Resultado;
     }
+    public double Fseno()
+    {
+        double a;
+        a=Math.toRadians(Numero1);
+        this.Resultado=Math.sin(a);
+        return this.Resultado;
+    }
+    public double Fcoseno()
+    {
+        double a;
+        a=Math.toRadians(Numero1);
+        this.Resultado=Math.cos(a);
+        return this.Resultado;
+    }
+    public double Ftangente()
+    {
+        double a;
+        a=Math.toRadians(Numero1);
+        this.Resultado=Math.tan(a);
+        return this.Resultado;
+    }
+    public double Farcseno()
+    {
+
+        this.Resultado=Math.toDegrees(Math.asin(this.Numero1));
+        return this.Resultado;
+    }
+   
 }

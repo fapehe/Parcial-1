@@ -38,6 +38,11 @@ public class Grafica extends javax.swing.JFrame {
         Div = new javax.swing.JButton();
         Resul = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        Sen = new javax.swing.JButton();
+        Cos = new javax.swing.JButton();
+        Tan = new javax.swing.JButton();
+        Asen = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,10 +87,44 @@ public class Grafica extends javax.swing.JFrame {
 
         jLabel3.setText("RESULTADO");
 
+        Sen.setText("sen");
+        Sen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SenMouseClicked(evt);
+            }
+        });
+
+        Cos.setText("cos");
+        Cos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CosMouseClicked(evt);
+            }
+        });
+
+        Tan.setText("tan");
+        Tan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TanMouseClicked(evt);
+            }
+        });
+
+        Asen.setText("asen");
+        Asen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AsenMouseClicked(evt);
+            }
+        });
+
+        jButton5.setText("sen");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,21 +136,29 @@ public class Grafica extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(N2, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
+                        .addComponent(N2))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Sum, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Sum, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                            .addComponent(Cos, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(Res, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Mul, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Div, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Res, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Mul, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Div, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Sen, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Tan, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Asen, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,12 +172,22 @@ public class Grafica extends javax.swing.JFrame {
                     .addComponent(N2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Sum, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Res, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Mul, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Div, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Sum, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Res, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Mul, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Div, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Sen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Cos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Tan, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Asen, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(Resul, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,35 +203,63 @@ public class Grafica extends javax.swing.JFrame {
 
     private void SumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SumMouseClicked
         // TODO add your handling code here:
-        this.miCalc.setNumero1(Float.valueOf(this.N1.getText()));
-        this.miCalc.setNumero2(Float.valueOf(this.N2.getText()));
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.setNumero2(Double.parseDouble(this.N2.getText()));
         this.miCalc.suma();
         this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
     }//GEN-LAST:event_SumMouseClicked
 
     private void ResMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResMouseClicked
         // TODO add your handling code here:
-        this.miCalc.setNumero1(Float.valueOf(this.N1.getText()));
-        this.miCalc.setNumero2(Float.valueOf(this.N2.getText()));
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.setNumero2(Double.parseDouble(this.N2.getText()));
         this.miCalc.resta();
         this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
     }//GEN-LAST:event_ResMouseClicked
 
     private void MulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MulMouseClicked
         // TODO add your handling code here:
-        this.miCalc.setNumero1(Float.valueOf(this.N1.getText()));
-        this.miCalc.setNumero2(Float.valueOf(this.N2.getText()));
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.setNumero2(Double.parseDouble(this.N2.getText()));
         this.miCalc.multiplicacion();
         this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
     }//GEN-LAST:event_MulMouseClicked
 
     private void DivMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DivMouseClicked
         // TODO add your handling code here:
-        this.miCalc.setNumero1(Float.valueOf(this.N1.getText()));
-        this.miCalc.setNumero2(Float.valueOf(this.N2.getText()));
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.setNumero2(Double.parseDouble(this.N2.getText()));
         this.miCalc.division();
         this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
     }//GEN-LAST:event_DivMouseClicked
+
+    private void SenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SenMouseClicked
+        // TODO add your handling code here:
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.Fseno();
+        this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
+    }//GEN-LAST:event_SenMouseClicked
+
+    private void CosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CosMouseClicked
+        // TODO add your handling code here:
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.Fcoseno();
+        this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
+    }//GEN-LAST:event_CosMouseClicked
+
+    private void TanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TanMouseClicked
+        // TODO add your handling code here:
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.Ftangente();
+        this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
+    }//GEN-LAST:event_TanMouseClicked
+
+    private void AsenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AsenMouseClicked
+        // TODO add your handling code here:
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.Farcseno();
+        this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
+    }//GEN-LAST:event_AsenMouseClicked
 
     /**
      * @param args the command line arguments
@@ -212,13 +297,18 @@ public class Grafica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Asen;
+    private javax.swing.JButton Cos;
     private javax.swing.JButton Div;
     private javax.swing.JButton Mul;
     private javax.swing.JTextField N1;
     private javax.swing.JTextField N2;
     private javax.swing.JButton Res;
     private javax.swing.JLabel Resul;
+    private javax.swing.JButton Sen;
     private javax.swing.JButton Sum;
+    private javax.swing.JButton Tan;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
