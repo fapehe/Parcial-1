@@ -11,6 +11,30 @@ package calculadorap1;
  */
 public class Calculadora {
     float Numero1;
+
+    public float getNumero1() {
+        return Numero1;
+    }
+
+    public void setNumero1(float Numero1) {
+        this.Numero1 = Numero1;
+    }
+
+    public float getNumero2() {
+        return Numero2;
+    }
+
+    public void setNumero2(float Numero2) {
+        this.Numero2 = Numero2;
+    }
+
+    public float getResultado() {
+        return Resultado;
+    }
+
+    public void setResultado(float Resultado) {
+        this.Resultado = Resultado;
+    }
     float Numero2;
     float Resultado;
     
