@@ -42,8 +42,8 @@ public class Grafica extends javax.swing.JFrame {
         Cos = new javax.swing.JButton();
         Tan = new javax.swing.JButton();
         Asen = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        Acos = new javax.swing.JButton();
+        Atan = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,14 +121,19 @@ public class Grafica extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("acos");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        Acos.setText("acos");
+        Acos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                AcosMouseClicked(evt);
             }
         });
 
-        jButton6.setText("atan");
+        Atan.setText("atan");
+        Atan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AtanMouseClicked(evt);
+            }
+        });
 
         jLabel4.setText("PARA USAR FUNCIONES TRIGONOMETRICAS INTODUZCA SOLO EL NUMERO 1");
 
@@ -171,9 +176,9 @@ public class Grafica extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(Asen, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Acos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Atan, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(Resul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -203,8 +208,8 @@ public class Grafica extends javax.swing.JFrame {
                     .addComponent(Cos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Tan, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Asen, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Acos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Atan, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Resul, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -288,12 +293,19 @@ public class Grafica extends javax.swing.JFrame {
         this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
     }//GEN-LAST:event_AsenMouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+    private void AcosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AcosMouseClicked
         // TODO add your handling code here:
         this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
         this.miCalc.Farcocos();
         this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_AcosMouseClicked
+
+    private void AtanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtanMouseClicked
+        // TODO add your handling code here:
+        this.miCalc.setNumero1(Double.parseDouble(this.N1.getText()));
+        this.miCalc.Farctan();
+        this.Resul.setText(String.valueOf(this.miCalc.getResultado()));
+    }//GEN-LAST:event_AtanMouseClicked
 
     /**
      * @param args the command line arguments
@@ -331,7 +343,9 @@ public class Grafica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Acos;
     private javax.swing.JButton Asen;
+    private javax.swing.JButton Atan;
     private javax.swing.JButton Cos;
     private javax.swing.JButton Div;
     private javax.swing.JButton Mul;
@@ -342,8 +356,6 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JButton Sen;
     private javax.swing.JButton Sum;
     private javax.swing.JButton Tan;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -122,5 +122,11 @@ public class Calculadora {
         this.Resultado=Math.toDegrees(Math.acos(this.Numero1));
         return this.Resultado;
     }
+    public double Farctan()
+    {
+        this.Resultado=Math.toDegrees(Math.acos(this.Numero1));
+        return this.Resultado;
+    }
+    
    
 }
