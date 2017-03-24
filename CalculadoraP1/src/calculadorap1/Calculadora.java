@@ -79,15 +79,47 @@ public class Calculadora {
     }
     public double Ftangente()
     {
-        double a;
-        a=Math.toRadians(Numero1);
-        this.Resultado=Math.tan(a);
-        return this.Resultado;
+        if (this.Numero1>=90)
+        {
+            
+            if (this.Numero1%90!=0)
+            {
+            double a;
+            a=Math.toRadians(Numero1);
+            this.Resultado=Math.tan(a);
+            return this.Resultado;   
+            }
+            else
+            {
+                if (this.Numero1>=180 && this.Numero1%180==0)
+                {
+                    double a;
+                    a=Math.toRadians(Numero1);
+                    this.Resultado=Math.tan(a);
+                    return this.Resultado;   
+                }
+                else
+                {
+                  return 100;  
+                }
+            }
+        }
+        else
+        {
+            double a;
+            a=Math.toRadians(Numero1);
+            this.Resultado=Math.tan(a);
+            return this.Resultado; 
+        }
     }
     public double Farcseno()
     {
-
         this.Resultado=Math.toDegrees(Math.asin(this.Numero1));
+        return this.Resultado;
+    }
+    public double Farcocos()
+    {
+        this.Resultado=Math.toDegrees(Math.acos(this.Numero1));
         return this.Resultado;
     }
    
